@@ -1,0 +1,322 @@
+<?xml version="1.0" encoding="utf-8"?>
+<unattend xmlns="urn:schemas-microsoft-com:unattend" xmlns:wcm="http://schemas.microsoft.com/WMIConfig/2002/State">
+	<!--https://schneegans.de/windows/unattend-generator/?LanguageMode=Unattended&UILanguage=en-US&Locale=en-US&Keyboard=00000409&GeoLocation=244&ProcessorArchitecture=amd64&BypassNetworkCheck=true&ComputerNameMode=Random&CompactOsMode=Default&TimeZoneMode=Explicit&TimeZone=Eastern+Standard+Time&PartitionMode=Interactive&WindowsEditionMode=Generic&WindowsEdition=pro&UserAccountMode=InteractiveLocal&PasswordExpirationMode=Unlimited&LockoutMode=Default&HideFiles=HiddenSystem&ShowFileExtensions=true&TaskbarSearch=Box&TaskbarIconsMode=Default&StartTilesMode=Default&StartPinsMode=Empty&EnableLongPaths=true&EnableRemoteDesktop=true&HardenSystemDriveAcl=true&AllowPowerShellScripts=true&DisableLastAccess=true&DisableAppSuggestions=true&HideEdgeFre=true&ProcessAudit=true&ProcessAuditCommandLine=true&EffectsMode=Default&WifiMode=Interactive&ExpressSettings=DisableAll&KeysMode=Skip&ColorMode=Default&WallpaperMode=Default&RemoveFamily=true&RemoveMixedReality=true&RemoveOffice365=true&RemoveSkype=true&RemoveGetStarted=true&RemoveYourPhone=true&FirstLogonScript0=if%28+%5BSystem.Environment%5D%3A%3AOSVersion.Version.Build+-lt+26100+%29+%7B%0D%0A++++%27This+script+requires+Windows+11+24H2+or+later.%27+%7C+Write-Warning%3B%0D%0A++++return%3B%0D%0A%7D%0D%0A%24timeout+%3D+%5Bdatetime%5D%3A%3ANow.AddMinutes%28+5+%29%3B%0D%0A%24exe+%3D+%22%24env%3ALOCALAPPDATA%5CMicrosoft%5CWindowsApps%5Cwinget.exe%22%3B%0D%0A%0D%0Awhile%28+%24true+%29+%7B%0D%0A++++if%28+%24exe+%7C+Test-Path+%29+%7B%0D%0A++++++++%24apps+%3D+%40%28%0D%0A++++++++++++%227zip.7zip%22%2C%0D%0A++++++++++++%22VideoLAN.VLC%22%2C%0D%0A++++++++++++%22HandBrake.HandBrake%22%2C%0D%0A++++++++++++%22Valve.Steam%22%2C%0D%0A++++++++++++%229PKTQ5699M62%22%2C+%23iCloud%0D%0A++++++++++++%22Mozilla.Firefox.DeveloperEdition%22%2C%0D%0A++++++++++++%229NZVDKPMR9RD%22%2C+%23+Firefox%0D%0A++++++++++++%22XP8CF6S8G2D5T6%22%2C+%23Opera%0D%0A++++++++++++%22Microsoft.PowerShell%22%2C%0D%0A++++++++++++%22ElectronicArts.EADesktop%22%2C%0D%0A++++++++++++%22Facebook.Messenger%22%2C%0D%0A++++++++++++%22OpenWhisperSystems.Signal%22%2C%0D%0A++++++++++++%22Microsoft.WindowsTerminal%22%2C%0D%0A++++++++++++%22Microsoft.PowerToys%22%2C%0D%0A++++++++++++%22Armin2208.WindowsAutoNightMode%22%2C%0D%0A++++++++++++%22TechPowerUp.NVCleanstall%22%2C%0D%0A++++++++++++%22yt-dlp.yt-dlp%22%2C%0D%0A++++++++++++%22XPDC2RH70K22MN%22%2C+%23Discord%0D%0A++++++++++++%229WZDNCRFJBH4%22%2C%0D%0A++++++++++++%22Gyan.FFmpeg.Shared%22%2C%0D%0A++++++++++++%229msmlrh6lzf3%22%2C%0D%0A++++++++++++%22Ubisoft.Connect%22%2C%0D%0A++++++++++++%229P8LTPGCBZXD%22%2C%0D%0A++++++++++++%22XP9KHM4BK9FZ7Q%22%2C%0D%0A++++++++++++%22sysinternals%22%2C%0D%0A++++++++++++%22Zen-Team.Zen-Browser%22%0D%0A++++++++%29%0D%0A%0D%0A++++++++foreach+%28%24app+in+%24apps%29+%7B%0D%0A%23++++++++++++%26+%24exe+install+%2D%2Dexact+%2D%2Did+%24app+%2D%2Dsilent+%2D%2Daccept-package-agreements+%2D%2Daccept-source-agreements+%2D%2Dsource+winget+%2D%2Dscope+machine%3B%0D%0A++++++++++++%26+%24exe+install+%2D%2Dexact+%2D%2Did+%24app+%2D%2Dsilent+%2D%2Daccept-package-agreements+%2D%2Daccept-source-agreements%3B%0D%0A++++++++%7D%0D%0A++++++++return%3B%0D%0A++++%7D%0D%0A++++if%28+%5Bdatetime%5D%3A%3ANow+-gt+%24timeout+%29+%7B%0D%0A++++++++%27File+%7B0%7D+does+not+exist.%27+-f+%24exe+%7C+Write-Warning%3B%0D%0A++++++++return%3B%0D%0A++++%7D%0D%0A++++Start-Sleep+-Seconds+1%3B%0D%0A%7D%0D%0A&FirstLogonScriptType0=Ps1&WdacMode=Skip-->
+	<settings pass="offlineServicing"></settings>
+	<settings pass="windowsPE">
+		<component name="Microsoft-Windows-International-Core-WinPE" processorArchitecture="amd64" publicKeyToken="31bf3856ad364e35" language="neutral" versionScope="nonSxS">
+			<SetupUILanguage>
+				<UILanguage>en-US</UILanguage>
+			</SetupUILanguage>
+			<InputLocale>0409:00000409</InputLocale>
+			<SystemLocale>en-US</SystemLocale>
+			<UILanguage>en-US</UILanguage>
+			<UserLocale>en-US</UserLocale>
+		</component>
+		<component name="Microsoft-Windows-Setup" processorArchitecture="amd64" publicKeyToken="31bf3856ad364e35" language="neutral" versionScope="nonSxS">
+			<UserData>
+				<ProductKey>
+					<Key>VK7JG-NPHTM-C97JM-9MPGT-3V66T</Key>
+				</ProductKey>
+				<AcceptEula>true</AcceptEula>
+			</UserData>
+			<UseConfigurationSet>false</UseConfigurationSet>
+		</component>
+	</settings>
+	<settings pass="generalize"></settings>
+	<settings pass="specialize">
+		<component name="Microsoft-Windows-Deployment" processorArchitecture="amd64" publicKeyToken="31bf3856ad364e35" language="neutral" versionScope="nonSxS">
+			<RunSynchronous>
+				<RunSynchronousCommand wcm:action="add">
+					<Order>1</Order>
+					<Path>powershell.exe -NoProfile -Command "$xml = [xml]::new(); $xml.Load('C:\Windows\Panther\unattend.xml'); $sb = [scriptblock]::Create( $xml.unattend.Extensions.ExtractScript ); Invoke-Command -ScriptBlock $sb -ArgumentList $xml;"</Path>
+				</RunSynchronousCommand>
+				<RunSynchronousCommand wcm:action="add">
+					<Order>2</Order>
+					<Path>powershell.exe -NoProfile -Command "Get-Content -LiteralPath 'C:\Windows\Setup\Scripts\Specialize.ps1' -Raw | Invoke-Expression;"</Path>
+				</RunSynchronousCommand>
+				<RunSynchronousCommand wcm:action="add">
+					<Order>3</Order>
+					<Path>reg.exe load "HKU\DefaultUser" "C:\Users\Default\NTUSER.DAT"</Path>
+				</RunSynchronousCommand>
+				<RunSynchronousCommand wcm:action="add">
+					<Order>4</Order>
+					<Path>powershell.exe -NoProfile -Command "Get-Content -LiteralPath 'C:\Windows\Setup\Scripts\DefaultUser.ps1' -Raw | Invoke-Expression;"</Path>
+				</RunSynchronousCommand>
+				<RunSynchronousCommand wcm:action="add">
+					<Order>5</Order>
+					<Path>reg.exe unload "HKU\DefaultUser"</Path>
+				</RunSynchronousCommand>
+			</RunSynchronous>
+		</component>
+		<component name="Microsoft-Windows-Shell-Setup" processorArchitecture="amd64" publicKeyToken="31bf3856ad364e35" language="neutral" versionScope="nonSxS">
+			<TimeZone>Eastern Standard Time</TimeZone>
+		</component>
+	</settings>
+	<settings pass="auditSystem"></settings>
+	<settings pass="auditUser"></settings>
+	<settings pass="oobeSystem">
+		<component name="Microsoft-Windows-International-Core" processorArchitecture="amd64" publicKeyToken="31bf3856ad364e35" language="neutral" versionScope="nonSxS">
+			<InputLocale>0409:00000409</InputLocale>
+			<SystemLocale>en-US</SystemLocale>
+			<UILanguage>en-US</UILanguage>
+			<UserLocale>en-US</UserLocale>
+		</component>
+		<component name="Microsoft-Windows-Shell-Setup" processorArchitecture="amd64" publicKeyToken="31bf3856ad364e35" language="neutral" versionScope="nonSxS">
+			<OOBE>
+				<ProtectYourPC>3</ProtectYourPC>
+				<HideEULAPage>true</HideEULAPage>
+				<HideWirelessSetupInOOBE>false</HideWirelessSetupInOOBE>
+				<HideOnlineAccountScreens>true</HideOnlineAccountScreens>
+			</OOBE>
+			<FirstLogonCommands>
+				<SynchronousCommand wcm:action="add">
+					<Order>1</Order>
+					<CommandLine>powershell.exe -NoProfile -Command "Get-Content -LiteralPath 'C:\Windows\Setup\Scripts\FirstLogon.ps1' -Raw | Invoke-Expression;"</CommandLine>
+				</SynchronousCommand>
+			</FirstLogonCommands>
+		</component>
+	</settings>
+	<Extensions xmlns="https://schneegans.de/windows/unattend-generator/">
+		<ExtractScript>
+param(
+    [xml] $Document
+);
+
+foreach( $file in $Document.unattend.Extensions.File ) {
+    $path = [System.Environment]::ExpandEnvironmentVariables( $file.GetAttribute( 'path' ) );
+    mkdir -Path( $path | Split-Path -Parent ) -ErrorAction 'SilentlyContinue';
+    $encoding = switch( [System.IO.Path]::GetExtension( $path ) ) {
+        { $_ -in '.ps1', '.xml' } { [System.Text.Encoding]::UTF8; }
+        { $_ -in '.reg', '.vbs', '.js' } { [System.Text.UnicodeEncoding]::new( $false, $true ); }
+        default { [System.Text.Encoding]::Default; }
+    };
+    $bytes = $encoding.GetPreamble() + $encoding.GetBytes( $file.InnerText.Trim() );
+    [System.IO.File]::WriteAllBytes( $path, $bytes );
+}
+		</ExtractScript>
+		<File path="C:\Windows\Setup\Scripts\RemovePackages.ps1">
+$selectors = @(
+	'MicrosoftCorporationII.MicrosoftFamily';
+	'Microsoft.Getstarted';
+	'Microsoft.MixedReality.Portal';
+	'Microsoft.MicrosoftOfficeHub';
+	'Microsoft.SkypeApp';
+	'Microsoft.YourPhone';
+);
+$getCommand = {
+  Get-AppxProvisionedPackage -Online;
+};
+$filterCommand = {
+  $_.DisplayName -eq $selector;
+};
+$removeCommand = {
+  [CmdletBinding()]
+  param(
+    [Parameter( Mandatory, ValueFromPipeline )]
+    $InputObject
+  );
+  process {
+    $InputObject | Remove-AppxProvisionedPackage -AllUsers -Online -ErrorAction 'Continue';
+  }
+};
+$type = 'Package';
+$logfile = 'C:\Windows\Setup\Scripts\RemovePackages.log';
+&amp; {
+	$installed = &amp; $getCommand;
+	foreach( $selector in $selectors ) {
+		$result = [ordered] @{
+			Selector = $selector;
+		};
+		$found = $installed | Where-Object -FilterScript $filterCommand;
+		if( $found ) {
+			$result.Output = $found | &amp; $removeCommand;
+			if( $? ) {
+				$result.Message = "$type removed.";
+			} else {
+				$result.Message = "$type not removed.";
+				$result.Error = $Error[0];
+			}
+		} else {
+			$result.Message = "$type not installed.";
+		}
+		$result | ConvertTo-Json -Depth 3 -Compress;
+	}
+} *&gt;&amp;1 &gt;&gt; $logfile;
+		</File>
+		<File path="C:\Windows\Setup\Scripts\SetStartPins.ps1">
+$json = '{"pinnedList":[]}';
+if( [System.Environment]::OSVersion.Version.Build -lt 20000 ) {
+	return;
+}
+$key = 'Registry::HKLM\SOFTWARE\Microsoft\PolicyManager\current\device\Start';
+New-Item -Path $key -ItemType 'Directory' -ErrorAction 'SilentlyContinue';
+Set-ItemProperty -LiteralPath $key -Name 'ConfigureStartPins' -Value $json -Type 'String';
+		</File>
+		<File path="C:\Windows\Setup\Scripts\unattend-01.ps1">
+if( [System.Environment]::OSVersion.Version.Build -lt 26100 ) {
+    'This script requires Windows 11 24H2 or later.' | Write-Warning;
+    return;
+}
+$timeout = [datetime]::Now.AddMinutes( 5 );
+$exe = "$env:LOCALAPPDATA\Microsoft\WindowsApps\winget.exe";
+
+while( $true ) {
+    if( $exe | Test-Path ) {
+        $apps = @(
+            "7zip.7zip",
+            "VideoLAN.VLC",
+            "HandBrake.HandBrake",
+            "Valve.Steam",
+            "9PKTQ5699M62", #iCloud
+            "Mozilla.Firefox.DeveloperEdition",
+            "9NZVDKPMR9RD", # Firefox
+            "XP8CF6S8G2D5T6", #Opera
+            "Microsoft.PowerShell",
+            "ElectronicArts.EADesktop",
+            "Facebook.Messenger",
+            "OpenWhisperSystems.Signal",
+            "Microsoft.WindowsTerminal",
+            "Microsoft.PowerToys",
+            "Armin2208.WindowsAutoNightMode",
+            "TechPowerUp.NVCleanstall",
+            "yt-dlp.yt-dlp",
+            "XPDC2RH70K22MN", #Discord
+            "9WZDNCRFJBH4",
+            "Gyan.FFmpeg.Shared",
+            "9msmlrh6lzf3",
+            "Ubisoft.Connect",
+            "9P8LTPGCBZXD",
+            "XP9KHM4BK9FZ7Q",
+            "sysinternals",
+            "Zen-Team.Zen-Browser"
+        )
+
+        foreach ($app in $apps) {
+#            &amp; $exe install --exact --id $app --silent --accept-package-agreements --accept-source-agreements --source winget --scope machine;
+            &amp; $exe install --exact --id $app --silent --accept-package-agreements --accept-source-agreements;
+        }
+        return;
+    }
+    if( [datetime]::Now -gt $timeout ) {
+        'File {0} does not exist.' -f $exe | Write-Warning;
+        return;
+    }
+    Start-Sleep -Seconds 1;
+}
+		</File>
+		<File path="C:\Windows\Setup\Scripts\Specialize.ps1">
+$scripts = @(
+	{
+		reg.exe add "HKLM\SOFTWARE\Microsoft\Windows\CurrentVersion\OOBE" /v BypassNRO /t REG_DWORD /d 1 /f;
+	};
+	{
+		Get-Content -LiteralPath 'C:\Windows\Setup\Scripts\RemovePackages.ps1' -Raw | Invoke-Expression;
+	};
+	{
+		net.exe accounts /maxpwage:UNLIMITED;
+	};
+	{
+		reg.exe add "HKLM\SYSTEM\CurrentControlSet\Control\FileSystem" /v LongPathsEnabled /t REG_DWORD /d 1 /f
+	};
+	{
+		netsh.exe advfirewall firewall set rule group="@FirewallAPI.dll,-28752" new enable=Yes;
+		reg.exe add "HKLM\SYSTEM\CurrentControlSet\Control\Terminal Server" /v fDenyTSConnections /t REG_DWORD /d 0 /f;
+	};
+	{
+		icacls.exe C:\ /remove:g "*S-1-5-11"
+	};
+	{
+		auditpol.exe /set /subcategory:"{0CCE922B-69AE-11D9-BED3-505054503030}" /success:enable /failure:enable;
+	};
+	{
+		reg.exe add "HKLM\SOFTWARE\Microsoft\Windows\CurrentVersion\Policies\System\Audit" /v ProcessCreationIncludeCmdLine_Enabled /t REG_DWORD /d 1 /f;
+	};
+	{
+		Set-ExecutionPolicy -Scope 'LocalMachine' -ExecutionPolicy 'RemoteSigned' -Force;
+	};
+	{
+		fsutil.exe behavior set disableLastAccess 1;
+	};
+	{
+		reg.exe add "HKLM\Software\Policies\Microsoft\Windows\CloudContent" /v "DisableWindowsConsumerFeatures" /t REG_DWORD /d 0 /f;
+	};
+	{
+		reg.exe add "HKLM\SOFTWARE\Policies\Microsoft\Edge" /v HideFirstRunExperience /t REG_DWORD /d 1 /f;
+	};
+	{
+		Get-Content -LiteralPath 'C:\Windows\Setup\Scripts\SetStartPins.ps1' -Raw | Invoke-Expression;
+	};
+);
+
+&amp; {
+	[float] $complete = 0;
+	[float] $increment = 100 / $scripts.Count;
+	foreach( $script in $scripts ) {
+		Write-Progress -Activity 'Running scripts to customize your Windows installation. Do not close this window.' -PercentComplete $complete;
+		&amp; $script;
+		$complete += $increment;
+	}
+} *&gt;&amp;1 &gt;&gt; "C:\Windows\Setup\Scripts\Specialize.log";
+		</File>
+		<File path="C:\Windows\Setup\Scripts\DefaultUser.ps1">
+$scripts = @(
+	{
+		reg.exe add "HKU\DefaultUser\Software\Microsoft\Windows\CurrentVersion\Explorer\Advanced" /v "HideFileExt" /t REG_DWORD /d 0 /f;
+	};
+	{
+		reg.exe add "HKU\DefaultUser\Software\Microsoft\Windows\CurrentVersion\Explorer\Advanced" /v "Hidden" /t REG_DWORD /d 1 /f;
+	};
+	{
+		$names = @(
+		  'ContentDeliveryAllowed';
+		  'FeatureManagementEnabled';
+		  'OEMPreInstalledAppsEnabled';
+		  'PreInstalledAppsEnabled';
+		  'PreInstalledAppsEverEnabled';
+		  'SilentInstalledAppsEnabled';
+		  'SoftLandingEnabled';
+		  'SubscribedContentEnabled';
+		  'SubscribedContent-310093Enabled';
+		  'SubscribedContent-338387Enabled';
+		  'SubscribedContent-338388Enabled';
+		  'SubscribedContent-338389Enabled';
+		  'SubscribedContent-338393Enabled';
+		  'SubscribedContent-353698Enabled';
+		  'SystemPaneSuggestionsEnabled';
+		);
+		
+		foreach( $name in $names ) {
+		  reg.exe add "HKU\DefaultUser\Software\Microsoft\Windows\CurrentVersion\ContentDeliveryManager" /v $name /t REG_DWORD /d 0 /f;
+		}
+	};
+);
+
+&amp; {
+	[float] $complete = 0;
+	[float] $increment = 100 / $scripts.Count;
+	foreach( $script in $scripts ) {
+		Write-Progress -Activity 'Running scripts to modify the default user&#x2019;&#x2019;s registry hive. Do not close this window.' -PercentComplete $complete;
+		&amp; $script;
+		$complete += $increment;
+	}
+} *&gt;&amp;1 &gt;&gt; "C:\Windows\Setup\Scripts\DefaultUser.log";
+		</File>
+		<File path="C:\Windows\Setup\Scripts\FirstLogon.ps1">
+$scripts = @(
+	{
+		Get-Content -LiteralPath 'C:\Windows\Setup\Scripts\unattend-01.ps1' -Raw | Invoke-Expression;
+	};
+);
+
+&amp; {
+	[float] $complete = 0;
+	[float] $increment = 100 / $scripts.Count;
+	foreach( $script in $scripts ) {
+		Write-Progress -Activity 'Running scripts to finalize your Windows installation. Do not close this window.' -PercentComplete $complete;
+		&amp; $script;
+		$complete += $increment;
+	}
+} *&gt;&amp;1 &gt;&gt; "C:\Windows\Setup\Scripts\FirstLogon.log";
+		</File>
+	</Extensions>
+</unattend>
